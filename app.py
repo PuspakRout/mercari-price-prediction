@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-# model = joblib.load('objects/model.obj')
+model = joblib.load('objects/model.obj')
 
 @app.route('/')
 def home():
@@ -27,7 +27,7 @@ def result():
 
 if __name__ == '__main__':
     #model_training()
-    model = joblib.load('objects/model.obj')
+    #model = joblib.load('objects/model.obj')
     app.run()
     
     
