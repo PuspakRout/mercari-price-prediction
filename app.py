@@ -2,6 +2,7 @@ from code import model_training, test_frame
 from flask import Flask, render_template, url_for, request
 import joblib
 import pandas as pd
+import numpy as np
 
 app = Flask(__name__)
 
@@ -18,6 +19,7 @@ def result():
         joblib.dump(df,'objects/df')
         feature_matrix = test_frame(df)
         result = model.predict(feature_matrix)[0]
+        result = np.expm1(result)
         result = f'Predicted Price {result:0.2f} USD'
         return render_template('result.html', result=result)
     
