@@ -1,1 +1,1 @@
-web: Werkzeug app:app
+web: gunicorn app:app
